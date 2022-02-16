@@ -20,8 +20,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.tbse.mininews.R
+import com.tbse.mininews.common.utils.ErrorMessage
 import com.tbse.mininews.common.utils.network.ServiceResult
 import com.tbse.mininews.domain.data.posts.PostsRepository
+import com.tbse.mininews.domain.model.PostsFeed
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import java.util.*
@@ -56,12 +58,12 @@ sealed interface HomeUiState {
      * There is guaranteed to be a [selectedPost], which is one of the posts from [postsFeed].
      */
     data class HasPosts(
-        val postsFeed: com.tbse.mininews.domain.model.PostsFeed,
+        val postsFeed: PostsFeed,
         val selectedPost: com.tbse.mininews.domain.model.Post,
         val isArticleOpen: Boolean,
         val favorites: Set<String>,
         override val isLoading: Boolean,
-        override val errorMessages: List<com.tbse.mininews.common.utils.ErrorMessage>,
+        override val errorMessages: List<ErrorMessage>,
         override val searchInput: String
     ) : HomeUiState
 }
@@ -70,12 +72,12 @@ sealed interface HomeUiState {
  * An internal representation of the Home route state, in a raw form
  */
 private data class HomeViewModelState(
-    val postsFeed: com.tbse.mininews.domain.model.PostsFeed? = null,
+    val postsFeed: PostsFeed? = null,
     val selectedPostId: String? = null, // TODO back selectedPostId in a SavedStateHandle
     val isArticleOpen: Boolean = false,
     val favorites: Set<String> = emptySet(),
     val isLoading: Boolean = false,
-    val errorMessages: List<com.tbse.mininews.common.utils.ErrorMessage> = emptyList(),
+    val errorMessages: List<ErrorMessage> = emptyList(),
     val searchInput: String = "",
 ) {
 

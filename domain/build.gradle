@@ -45,6 +45,9 @@ dependencies {
     implementation project(path: ':mock')
     implementation project(path: ':service')
 
+    implementation dep.retrofit.retrofit
+    implementation dep.retrofit.converterGson
+
     implementation dep.kotlinx.coroutines.android
     implementation dep.kotlinx.coroutines.core
     implementation dep.android.material
@@ -54,6 +57,8 @@ dependencies {
     implementation dep.androidx.activityKtx
     implementation dep.androidx.coreKtx
     implementation dep.androidx.activityCompose
+
+    implementation dep.coil
 
     testImplementation dep.test.junit
     androidTestImplementation dep.androidx.test.extJUnit

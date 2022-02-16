@@ -1,5 +1,6 @@
 package com.tbse.mininews.service.client
 
+import com.tbse.mininews.service.model.Posts
 import retrofit2.http.GET
 
 /**
@@ -8,7 +9,7 @@ import retrofit2.http.GET
  */
 interface ApiClient {
 
-    @GET("/top-headlines?country=us&apiKey=${ApiKey.KEY}")
-    suspend fun getPosts()
+    @GET("top-headlines?country=us&apiKey=${ApiKey.KEY}")
+    suspend fun getPosts(): Posts
 
 }

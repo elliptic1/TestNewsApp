@@ -30,6 +30,8 @@ ext {
             espresso       : '3.4.0',
 
             inject         : '1',
+
+            coil           : '1.4.0',
     ]
 
     dep = [
@@ -94,6 +96,7 @@ ext {
             ],
             test       : [
                     junit: "junit:junit:${versions.junit}",
-            ]
+            ],
+            coil       : "io.coil-kt:coil:${versions.coil}"
     ]
 }

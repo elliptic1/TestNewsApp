@@ -20,6 +20,7 @@ import android.content.Context
 import com.tbse.mininews.domain.data.interests.InterestsRepository
 import com.tbse.mininews.domain.data.interests.impl.FakeInterestsRepository
 import com.tbse.mininews.domain.data.posts.PostsRepository
+import com.tbse.mininews.domain.data.posts.impl.PostsRepositoryImpl
 import com.tbse.mininews.domain.data.posts.mockImpl.FakePostsRepository
 
 /**
@@ -38,7 +39,7 @@ interface AppContainer {
 class AppContainerImpl(private val applicationContext: Context) : AppContainer {
 
     override val postsRepository: PostsRepository by lazy {
-        FakePostsRepository()
+        PostsRepositoryImpl(applicationContext)
     }
 
     override val interestsRepository: InterestsRepository by lazy {

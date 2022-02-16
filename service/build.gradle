@@ -32,6 +32,7 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':common')
 
     implementation dep.retrofit.retrofit
     implementation dep.retrofit.converterGson
