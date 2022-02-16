@@ -1,3 +1,6 @@
 rootProject.name='MiniNews'
 include ':app'
 include ':service'
+include ':domain'
+include ':common'
+include ':mock'

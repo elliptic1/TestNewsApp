@@ -13,19 +13,18 @@
   the License.
   -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.jetnews">
+    package="com.tbse.mininews">
 
     <application
-        android:name=".JetnewsApplication"
-        android:allowBackup="true"
+        android:name="com.tbse.mininews.MiniNewsApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Jetnews">
+        android:theme="@style/Theme.Mininews">
 
         <!-- adjustResize ensures that the main window resizes to make room for the soft keyboard-->
         <activity
-            android:name=".ui.MainActivity"
+            android:name="com.tbse.mininews.ui.MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>

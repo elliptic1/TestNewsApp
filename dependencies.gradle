@@ -1,0 +1,99 @@
+ext {
+    versions = [
+            minSdk         : 'android-21',
+            targetSdk      : 'android-31',
+            compileSdk     : 'android-31',
+
+            retrofit       : '2.9.0',
+
+            kotlin         : '1.6.10',
+            coroutines     : '1.6.0',
+            compose        : '1.1.0',
+            accompanist    : '0.23.0',
+
+            window         : '1.0.0',
+            appCompat      : '1.3.1',
+            activityKtx    : '1.4.0',
+            coreKtx        : '1.7.0',
+            activityCompose: '1.4.0',
+            lifecycle      : '2.4.0',
+            navigation     : '2.4.0-beta02',
+            test           : '1.4.0',
+
+            // TODO: Bump to 4.6.* after https://github.com/robolectric/robolectric/issues/6593 is fixed
+            robolectric    : '4.5.1',
+
+            material       : '1.5.0',
+
+            junit          : '4.13.2',
+            extJUnit       : '1.1.3',
+            espresso       : '3.4.0',
+
+            inject         : '1',
+    ]
+
+    dep = [
+            android    : [
+                    material: "com.google.android.material:material:${versions.material}",
+            ],
+            retrofit   : [
+                    retrofit     : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+                    converterGson: "com.squareup.retrofit2:converter-gson:${versions.retrofit}",
+            ],
+            compose    : [
+                    runtime              : "androidx.compose.runtime:runtime:${versions.compose}",
+                    ui                   : "androidx.compose.ui:ui:${versions.compose}",
+                    foundationLayout     : "androidx.compose.foundation:foundation-layout:${versions.compose}",
+                    material             : "androidx.compose.material:material:${versions.compose}",
+                    materialIconsExtended: "androidx.compose.material:material-icons-extended:${versions.compose}",
+                    foundation           : "androidx.compose.foundation:foundation:${versions.compose}",
+                    animation            : "androidx.compose.animation:animation:${versions.compose}",
+                    uiTooling            : "androidx.compose.ui:ui-tooling:${versions.compose}",
+                    runtimeLivedata      : "androidx.compose.runtime:runtime-livedata:${versions.compose}",
+            ],
+            accompanist: [
+                    swipeRefresh      : "com.google.accompanist:accompanist-swiperefresh:${versions.accompanist}",
+                    insets            : "com.google.accompanist:accompanist-insets:${versions.accompanist}",
+                    systemUiController: "com.google.accompanist:accompanist-systemuicontroller:${versions.accompanist}",
+            ],
+            androidx   : [
+                    window         : "androidx.window:window:${versions.window}",
+                    appCompat      : "androidx.appcompat:appcompat:${versions.appCompat}",
+                    activityKtx    : "androidx.activity:activity-ktx:${versions.activityKtx}",
+                    coreKtx        : "androidx.core:core-ktx:${versions.coreKtx}",
+                    activityCompose: "androidx.activity:activity-compose:${versions.activityCompose}",
+                    lifecycle      : [
+                            viewmodelKtx       : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}",
+                            viewModelSavedState: "androidx.lifecycle:lifecycle-viewmodel-savedstate:${versions.lifecycle}",
+                            livedataKtx        : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}",
+                            viewmodelCompose   : "androidx.lifecycle:lifecycle-viewmodel-compose:${versions.lifecycle}",
+                    ],
+                    navigation     : "androidx.navigation:navigation-compose:${versions.navigation}",
+                    test           : [
+                            core          : "androidx.test:core:${versions.test}",
+                            rules         : "androidx.test:rules:${versions.test}",
+                            runner        : "androidx.test:runner:${versions.test}",
+                            uiTest        : "androidx.compose.ui:ui-test:${versions.compose}",
+                            uiTestJUnit4  : "androidx.compose.ui:ui-test-junit4:${versions.compose}",
+                            uiTestManifest: "androidx.compose.ui:ui-test-manifest:${versions.compose}",
+                            robolectric   : "org.robolectric:robolectric:${versions.robolectric}",
+                            extJUnit      : "androidx.test.ext:junit:${versions.extJUnit}",
+                            espresso      : [
+                                    core: "androidx.test.espresso:espresso-core:${versions.espresso}",
+                            ]
+                    ]
+            ],
+            kotlinx    : [
+                    coroutines: [
+                            android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}",
+                            core   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}",
+                    ]
+            ],
+            javax      : [
+                    inject: "javax.inject:javax.inject:${versions.inject}",
+            ],
+            test       : [
+                    junit: "junit:junit:${versions.junit}",
+            ]
+    ]
+}

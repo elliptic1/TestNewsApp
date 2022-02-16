@@ -1,0 +1,67 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from: '../dependencies.gradle'
+
+android {
+    compileSdkVersion versions.compileSdk
+
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion versions.compose
+    }
+}
+
+dependencies {
+    implementation dep.androidx.window
+
+    implementation dep.kotlinx.coroutines.android
+    implementation dep.kotlinx.coroutines.core
+
+    implementation dep.compose.runtime
+    implementation dep.compose.ui
+    implementation dep.compose.material
+    implementation dep.compose.materialIconsExtended
+    implementation dep.compose.foundation
+    implementation dep.compose.foundationLayout
+    implementation dep.compose.animation
+    implementation dep.compose.uiTooling
+    implementation dep.compose.runtimeLivedata
+
+    implementation dep.androidx.appCompat
+    implementation dep.androidx.coreKtx
+
+    implementation dep.android.material
+    testImplementation dep.test.junit
+    androidTestImplementation dep.androidx.test.extJUnit
+    androidTestImplementation dep.androidx.test.espresso.core
+}
