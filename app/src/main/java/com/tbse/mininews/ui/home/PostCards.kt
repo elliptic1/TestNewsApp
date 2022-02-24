@@ -51,11 +51,11 @@ fun AuthorAndReadTime(
         CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
             Text(
                 text = stringResource(
-                    id = R.string.home_post_min_read,
-                    formatArgs = arrayOf(
-                        post.metadata.author.name,
-                        post.metadata.readTimeMinutes
-                    )
+                    id = R.string.home_post_min_read
+//                    formatArgs = arrayOf(
+//                        post.metadata.author.name,
+//                        post.metadata.readTimeMinutes
+//                    )
                 ),
                 style = MaterialTheme.typography.body2
             )
@@ -63,16 +63,16 @@ fun AuthorAndReadTime(
     }
 }
 
-@Composable
-fun PostImage(post: com.tbse.mininews.domain.model.Post, modifier: Modifier = Modifier) {
-    Image(
-        painter = painterResource(post.imageThumbId),
-        contentDescription = null, // decorative
-        modifier = modifier
-            .size(40.dp, 40.dp)
-            .clip(MaterialTheme.shapes.small)
-    )
-}
+//@Composable
+//fun PostImage(post: com.tbse.mininews.domain.model.Post, modifier: Modifier = Modifier) {
+//    Image(
+//        painter = painterResource(post.imageThumbId),
+//        contentDescription = null, // decorative
+//        modifier = modifier
+//            .size(40.dp, 40.dp)
+//            .clip(MaterialTheme.shapes.small)
+//    )
+//}
 
 @Composable
 fun PostTitle(post: com.tbse.mininews.domain.model.Post) {
@@ -103,7 +103,7 @@ fun PostCardSimple(
                 )
             }
     ) {
-        PostImage(post, Modifier.padding(end = 16.dp))
+//        PostImage(post, Modifier.padding(end = 16.dp))
         Column(modifier = Modifier.weight(1f)) {
             PostTitle(post)
             AuthorAndReadTime(post)
@@ -129,10 +129,10 @@ fun PostCardHistory(
         Modifier
             .clickable(onClick = { navigateToArticle(post.id) })
     ) {
-        PostImage(
-            post = post,
-            modifier = Modifier.padding(top = 16.dp, start = 16.dp, end = 16.dp)
-        )
+//        PostImage(
+//            post = post,
+//            modifier = Modifier.padding(top = 16.dp, start = 16.dp, end = 16.dp)
+//        )
         Column(
             Modifier
                 .weight(1f)

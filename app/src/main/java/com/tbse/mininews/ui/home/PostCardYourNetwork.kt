@@ -52,14 +52,14 @@ fun PostCardPopular(
     ) {
         Column(modifier = Modifier.clickable(onClick = { navigateToArticle(post.id) })) {
 
-            Image(
-                painter = painterResource(post.imageId),
-                contentDescription = null, // decorative
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .height(100.dp)
-                    .fillMaxWidth()
-            )
+//            Image(
+//                painter = painterResource(post.imageId),
+//                contentDescription = null, // decorative
+//                contentScale = ContentScale.Crop,
+//                modifier = Modifier
+//                    .height(100.dp)
+//                    .fillMaxWidth()
+//            )
 
             Column(modifier = Modifier.padding(16.dp)) {
                 Text(
@@ -69,7 +69,7 @@ fun PostCardPopular(
                     overflow = TextOverflow.Ellipsis
                 )
                 Text(
-                    text = post.metadata.author.name,
+                    text = post.metadata.author.name ?: "No name",
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                     style = MaterialTheme.typography.body2

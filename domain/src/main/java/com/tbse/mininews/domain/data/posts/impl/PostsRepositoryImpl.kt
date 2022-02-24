@@ -52,7 +52,7 @@ class PostsRepositoryImpl(val context: Context) : PostsRepository {
         return withContext(Dispatchers.IO) {
             val response = service.getPosts()
             val articles = response.articles ?: listOf()
-            val total = response.totalResults ?: 0
+            val total = response.articles.size ?: 0
 
             val popular = mutableListOf<Post>()
             val recommended = mutableListOf<Post>()

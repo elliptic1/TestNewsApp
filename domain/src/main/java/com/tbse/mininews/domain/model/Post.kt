@@ -37,7 +37,7 @@ data class Metadata(
 )
 
 data class PostAuthor(
-    val name: String,
+    val name: String? = "",
     val url: String? = null
 )
 
@@ -47,8 +47,8 @@ data class Publication(
 )
 
 data class Paragraph(
-    val type: ParagraphType,
-    val text: String,
+    val type: ParagraphType = ParagraphType.Text,
+    val text: String? = "",
     val markups: List<Markup> = emptyList()
 )
 

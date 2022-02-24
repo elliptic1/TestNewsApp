@@ -46,12 +46,12 @@ fun PostCardTop(post: com.tbse.mininews.domain.model.Post, modifier: Modifier = 
             .heightIn(min = 180.dp)
             .fillMaxWidth()
             .clip(shape = MaterialTheme.shapes.medium)
-        Image(
-            painter = painterResource(post.imageId),
-            contentDescription = null, // decorative
-            modifier = imageModifier,
-            contentScale = ContentScale.Crop
-        )
+//        Image(
+//            painter = painterResource(post.imageId),
+//            contentDescription = null, // decorative
+//            modifier = imageModifier,
+//            contentScale = ContentScale.Crop
+//        )
         Spacer(Modifier.height(16.dp))
 
         Text(
@@ -60,7 +60,7 @@ fun PostCardTop(post: com.tbse.mininews.domain.model.Post, modifier: Modifier = 
             modifier = Modifier.padding(bottom = 8.dp)
         )
         Text(
-            text = post.metadata.author.name,
+            text = post.metadata.author.name ?: "No name",
             style = typography.subtitle2,
             modifier = Modifier.padding(bottom = 4.dp)
         )

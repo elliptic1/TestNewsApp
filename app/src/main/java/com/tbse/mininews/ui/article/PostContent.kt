@@ -128,12 +128,12 @@ private fun PostHeaderImage(post: com.tbse.mininews.domain.model.Post) {
         .heightIn(min = 180.dp)
         .fillMaxWidth()
         .clip(shape = MaterialTheme.shapes.medium)
-    Image(
-        painter = painterResource(post.imageId),
-        contentDescription = null, // decorative
-        modifier = imageModifier,
-        contentScale = ContentScale.Crop
-    )
+//    Image(
+//        painter = painterResource(post.imageId),
+//        contentDescription = null, // decorative
+//        modifier = imageModifier,
+//        contentScale = ContentScale.Crop
+//    )
     Spacer(Modifier.height(defaultSpacerSize))
 }
 
@@ -154,7 +154,7 @@ private fun PostMetadata(metadata: com.tbse.mininews.domain.model.Metadata) {
         Spacer(Modifier.width(8.dp))
         Column {
             Text(
-                text = metadata.author.name,
+                text = metadata.author.name ?: "No Author",
                 style = typography.caption,
                 modifier = Modifier.padding(top = 4.dp)
             )
@@ -310,7 +310,7 @@ private fun paragraphToAnnotatedString(
 ): AnnotatedString {
     val styles: List<AnnotatedString.Range<SpanStyle>> = paragraph.markups
         .map { it.toAnnotatedStringItem(typography, codeBlockBackground) }
-    return AnnotatedString(text = paragraph.text, spanStyles = styles)
+    return AnnotatedString(text = paragraph.text ?: "no text", spanStyles = styles)
 }
 
 fun com.tbse.mininews.domain.model.Markup.toAnnotatedStringItem(
