@@ -6,6 +6,6 @@ package com.tbse.mininews.service.client
  */
 open class ApiConstants {
     companion object {
-        const val serviceUrl = "https://newsapi.org/v2/"
+        const val serviceUrl = "https://dufy5lwauf12h.cloudfront.net/"
     }
 }

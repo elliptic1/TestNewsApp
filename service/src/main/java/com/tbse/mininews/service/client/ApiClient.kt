@@ -9,7 +9,7 @@ import retrofit2.http.GET
  */
 interface ApiClient {
 
-    @GET("top-headlines?country=us&apiKey=${ApiKey.KEY}")
+    @GET("news")
     suspend fun getPosts(): Posts
 
 }
