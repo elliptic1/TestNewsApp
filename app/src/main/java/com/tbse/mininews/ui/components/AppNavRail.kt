@@ -121,7 +121,7 @@ private fun NavRailIcon(
         color = backgroundColor,
         onClick = action,
         shape = CircleShape,
-        role = Role.Tab,
+//        role = Role.Tab,
         modifier = modifier.size(48.dp)
     ) {
         NavigationIcon(
