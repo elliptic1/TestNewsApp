@@ -35,8 +35,9 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerExtensionVersion versions.composeCompiler
     }
+    namespace 'com.tbse.mininews.domain'
 
 }
 

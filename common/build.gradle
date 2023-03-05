@@ -37,8 +37,9 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion versions.compose
+        kotlinCompilerExtensionVersion versions.composeCompiler
     }
+    namespace 'com.tbse.mininews.common'
 }
 
 dependencies {
